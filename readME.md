@@ -181,35 +181,7 @@ python label_data.py
 
 ### **6️⃣ Train Machine Learning Model**
 ```powershell
-python 
-# Select features and target
-features = ["frame.len", "ip.proto", "tcp.flags", "udp.length"]
-X = df[features].fillna(0)  # Replace missing values
-y = df["label"]
-
-# Split data into training (80%) and testing (20%)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Train Random Forest model
-model = RandomForestClassifier(n_estimators=100, random_state=42)
-model.fit(X_train, y_train)
-
-# Make predictions
-y_pred = model.predict(X_test)
-
-# Evaluate performance
-accuracy = accuracy_score(y_test, y_pred)
-print(f"âœ… Model Training Complete! Accuracy: {accuracy:.2f}")
-print("\nðŸ“Š Classification Report:\n", classification_report(y_test, y_pred)))
-
-# Confusion Matrix
-cm = confusion_matrix(y_test, y_pred)
-plt.figure(figsize=(5,5))
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Benign", "Malicious"], yticklabels=["Benign", "Malicious"])
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
-plt.title("Confusion Matrix")
-plt.show()
+python train_model.py
 ```
 
 ---
