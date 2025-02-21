@@ -1,0 +1,5 @@
+📊 Intrusion Detection Summary Report
+------------------------------------
+Total Entries: 5
+Benign Traffic: 2
+Malicious Traffic: 3
